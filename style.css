@@ -1,0 +1,139 @@
+.container {
+    display: flex;
+    font-size: 25px;
+    margin: 2% 10%;
+    background-color: #2aa7df;
+    border-radius: 2%;
+    height: 900px;
+}
+.master {
+    width: 25%;
+}
+.master-content{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 99%;
+}
+.details {
+    border-radius: 2%;
+    background-color: #fff;
+    width: 70%;
+    margin: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.title {
+    font-weight: bold;
+}
+.containerDetailText {
+    width: 60%;
+    font-size: 30px;
+}
+.cardCat {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin-top: 10%;
+}
+
+.arrowLeft {
+    width: 300px;
+    height: 200px;
+    margin-top: 4%;
+}
+.descriptionApp {
+    font-size: 40px;
+    font-family: 'Luckiest Guy', cursive;
+    display: flex;
+}
+.container-text {
+    margin: 2%;
+}
+input {
+    width: 70%;
+    margin: 5% 15%;
+}
+.red-cross {
+    height: 30px;
+}
+li {
+    background-color: #fff;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 10%; 
+    border-radius: 7%;
+    font-family: 'Work Sans', sans-serif;
+}
+.container-text-li {
+    width: 100%;
+}
+
+li:hover {
+    cursor: pointer;
+    background-color: #87CEEB;
+}
+.green-arrow {
+    height: 30px;
+}
+.container-arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.deleted {
+    filter: brightness(50%) sepia(1) grayscale(70%);
+}
+
+@media screen and (max-width: 700px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .master{
+        width: 90%;
+        height: 100%;
+    }
+    li {
+        margin: 5%;
+    }
+    .details{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .arrowLeft {
+        height: 50px;
+        width: 100px;
+    }
+    .container-text {
+        font-size: 20px;
+    }
+    .containerDetailText {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1330px) {
+    .container {
+        margin: 0;
+    }
+    li {
+        margin-left: 0%;
+    }
+    .container-text-li {
+        font-size: 15px;
+    }
+    .arrowLeft {
+        height: 100px;
+        width: 200px;
+    }
+    .containerDetailText {
+        width: 100%;
+        font-size: 20px;
+    }
+    .cardCat {
+        width: 200px;
+        height: 200px;
+    }
+}
