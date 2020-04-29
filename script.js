@@ -23,7 +23,7 @@ async function getData(moreUrl, imgUrl) {
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             });
-        const dataImg = await response.text();
+        const dataImg = await response.url;
         return dataImg;
     }
 
@@ -168,6 +168,12 @@ function createDetails(item) {
              let dataDetailsPromise = getData(moreUrl);
              dataDetailsPromise.then(detailsObj => {
                  detail.innerHTML = '';
+                 const img = document.createElement('img');
+                 let dataAboutImg = getData('',proxyurl + base + detailsObj.pic);
+                 dataAboutImg.then(dataThisImg => {
+                    img.src = dataThisImg;
+                    img.classList.add('cardCat');
+                 });
                  const name = document.createElement('div');
                  name.textContent = item.name;
                  name.classList.add('title');
@@ -180,13 +186,9 @@ function createDetails(item) {
                  const bio = document.createElement('p');
                  bio.textContent = detailsObj.bio;
                  containerDetailText.appendChild(bio);
-                 detail.appendChild(containerDetailText);
-
-                 const img = document.createElement('img');
-                 img.src = proxyurl + base + detailsObj.pic;
-                 img.classList.add('cardCat');
-                 getData('',proxyurl + base + detailsObj.pic);
+                 
                  containerImg.appendChild(img);
+                 detail.appendChild(containerDetailText);
                  detail.appendChild(containerImg);
              }).catch(err => console.log(err));
         }
@@ -219,3 +221,4 @@ function sendGlobalData(globalDataArr) {
 }
 
 createUl();
+
